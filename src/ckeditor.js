@@ -35,6 +35,9 @@ import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize";
 import HeadingButtonsUI from "@ckeditor/ckeditor5-heading/src/headingbuttonsui";
 import ParagraphButtonUI from "@ckeditor/ckeditor5-paragraph/src/paragraphbuttonui";
 
+import TableProperties from "@ckeditor/ckeditor5-table/src/tableproperties";
+import TableCellProperties from "@ckeditor/ckeditor5-table/src/tablecellproperties";
+
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
@@ -65,6 +68,8 @@ ClassicEditor.builtinPlugins = [
 	ImageResize,
 	HeadingButtonsUI,
 	ParagraphButtonUI,
+	TableProperties,
+	TableCellProperties,
 ];
 
 // Editor configuration.
@@ -128,7 +133,13 @@ ClassicEditor.defaultConfig = {
 		],
 	},
 	table: {
-		contentToolbar: ["tableColumn", "tableRow", "mergeTableCells"],
+		contentToolbar: [
+			"tableColumn",
+			"tableRow",
+			"mergeTableCells",
+			"tableProperties",
+			"tableCellProperties",
+		],
 	},
 	heading: {
 		options: [
